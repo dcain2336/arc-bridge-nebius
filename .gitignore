@@ -1,0 +1,14 @@
+# Local secrets and runtime data never belong in the repo.
+.env
+data/*.jsonl
+data/*.json
+# Python bytecode caches.
+__pycache__/
+*.pyc
+# Distribution artifacts.
+*.egg-info/
+dist/
+build/
+# Editor and OS droppings.
+.DS_Store
+.vscode/
