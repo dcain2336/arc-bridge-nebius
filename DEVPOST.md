@@ -1,6 +1,8 @@
-# DEVPOST submission draft — Nebius × NVIDIA Global AI Hackathon
-# (DRAFT — not submitted. Deadline Fri Oct 30, 2026, 1:00 PM EDT.)
-# Items marked [LIVE-CHECK] need a fact only a live run can provide.
+# DEVPOST submission — Nebius × NVIDIA Global AI Hackathon
+# SUBMITTED Oct 28, 2026, 5:03 PM EDT: https://devpost.com/software/arc-bridge-mcp-nebius-port-personal-ai-edition
+# (Personal AI track, solo. Editable until Fri Oct 30, 2026, 1:00 PM EDT.)
+# One submission-time deviation: the elevator pitch was shortened 234 → 190
+# chars for Devpost's 200-char limit, content preserved.
 
 ## Project name
 ARC Bridge MCP — Nebius Port (Personal AI edition)
