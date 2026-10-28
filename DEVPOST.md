@@ -108,7 +108,11 @@ Nebius Token Factory · NVIDIA Nemotron · OAuth 2.1 / PKCE · Supabase REST
   the same question with the key removed, honestly labeled retrieval.]
 - Demo URL: https://apnic-examples-navigate-prizes.trycloudflare.com
   (MCP endpoint at /mcp; quick tunnel from the Oracle host to the
-  arc-bridge server on port 8772).
+  arc-bridge server on port 8772). Live since Oct 28, 16:33 EDT:
+  arc_ask answers are written by Nemotron (direct Token Factory calls)
+  behind a server-side $5.00 spend cap estimated at a conservative
+  $1.00 per million tokens (first live call: 254 tokens, $0.000254
+  estimated); at the cap the demo falls back to honest retrieval.
 - Public repo: https://github.com/dcain2336/arc-bridge-nebius (public,
   MIT license, this README as the repo README).
 
@@ -154,7 +158,8 @@ facts after the credit-funded live run.
 
 ## Submission checklist status
 - [x] Working project + track (Personal AI) + description — this draft
-- [ ] Working demo URL — [LIVE-CHECK above]
+- [x] Working demo URL — live Oct 28, 16:33 EDT via the tunnel (arc_health
+  configured, arc_ask model.used true on the demo question)
 - [ ] ≤3-minute public YouTube demo video — record after live run
 - [ ] Public repo with OSS license + README — repo creation is a human-gated step
 - [x] Feedback draft — above, completed after the live run
