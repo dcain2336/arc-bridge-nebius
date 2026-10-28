@@ -36,7 +36,7 @@ Five tools plus one resource, over `POST /mcp`:
 - **Configuration is entirely env-driven** (see `.env.example`):
   - `TOKEN_FACTORY_API_KEY` — the only required secret.
   - `TOKEN_FACTORY_BASE_URL` — default `https://api.tokenfactory.nebius.com/v1`.
-  - `NEBIUS_MODEL` — default `nvidia/nemotron-3-nano-30b-a3b`.
+  - `NEBIUS_MODEL` — default `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B`.
 - **Where the model sits in the loop:** `arc_ask` first retrieves the
   top memory records for the question, then Nemotron writes the answer
   **grounded in those records only** (system prompt: answer from memory,
@@ -57,7 +57,7 @@ Five tools plus one resource, over `POST /mcp`:
 ```bash
 python3 server.py
 # backend: LocalBackend
-# model: nebius-token-factory nvidia/nemotron-3-nano-30b-a3b configured=False (missing: TOKEN_FACTORY_API_KEY)
+# model: nebius-token-factory nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B configured=False (missing: TOKEN_FACTORY_API_KEY)
 # auth: none (local mode -- bind to 127.0.0.1 ...)
 # ARC Bridge MCP (Nebius port) on http://127.0.0.1:8765/mcp
 ```

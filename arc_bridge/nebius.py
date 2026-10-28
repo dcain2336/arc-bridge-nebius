@@ -20,7 +20,7 @@ import urllib.error  # HTTPError carries the status/body for diagnostics.
 # Default Token Factory API root (the /v1 OpenAI-compatible surface).
 DEFAULT_BASE_URL = "https://api.tokenfactory.nebius.com/v1"  # Overridable via TOKEN_FACTORY_BASE_URL.
 # Default model: an NVIDIA Nemotron instruct model hosted on Token Factory.
-DEFAULT_MODEL = "nvidia/nemotron-3-nano-30b-a3b"  # Overridable via NEBIUS_MODEL; console-confirmed Oct 28 (the old 70B instruct is not offered).
+DEFAULT_MODEL = "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B"  # Overridable via NEBIUS_MODEL; API-list-confirmed Oct 28 (the old 70B instruct is not offered).
 # HTTP timeout (seconds) for the Token Factory call; bounded like the mesh.
 TOKEN_FACTORY_TIMEOUT_S = 30  # A hung model call must never hang a tool call.
 # Speech-safe cap for model answers, mirroring the backends' digest cap.

@@ -65,7 +65,7 @@ class ClientConfigTests(EnvGuard):  # The fail-closed configuration behavior.
         # The missing list must name the API key variable exactly.
         self.assertEqual(client.missing(), ["TOKEN_FACTORY_API_KEY"])  # Operators see precisely what to set.
         # The status snapshot must carry the Nemotron default model slug.
-        self.assertIn("nemotron", client.status()["model"])  # The default model is a Nemotron, per the hackathon rule.
+        self.assertIn("nemotron", client.status()["model"].lower())  # The default model is a Nemotron, per the hackathon rule (case-insensitive: the live API slug uses a capital N).
     # chat() without configuration raises the clear error and never calls out.
     def test_chat_unconfigured_raises_clear_error(self):  # Fail-closed, no fake live calls.
         # Build a client against the cleared environment.
@@ -149,7 +149,7 @@ class ClientHttpTests(EnvGuard):  # Request shape, auth header, response parsing
         # The fake must have seen the Bearer key on the wire.
         self.assertEqual(server.seen_auth, "Bearer test-key-not-real")  # Auth header shape matches OpenAI-compatible APIs.
         # The fake must have seen the default Nemotron model slug.
-        self.assertIn("nemotron", server.seen_body["model"])  # The request asks for a Nemotron model by default.
+        self.assertIn("nemotron", server.seen_body["model"].lower())  # The request asks for a Nemotron model by default (case-insensitive: the live API slug uses a capital N).
 
 
 # Tests for how the local backend behaves with and without the model.
@@ -189,7 +189,7 @@ class BackendIntegrationTests(EnvGuard):  # arc_ask and arc_health model reporti
         # The block must report unconfigured with the Nemotron default slug.
         self.assertFalse(snap["model"]["configured"])  # Honest about the missing key.
         # The slug in the block must be a Nemotron model.
-        self.assertIn("nemotron", snap["model"]["model"])  # The hackathon's model rule, visible in health.
+        self.assertIn("nemotron", snap["model"]["model"].lower())  # The hackathon's model rule, visible in health (case-insensitive: the live API slug uses a capital N).
 
 
 # Run the tests when this file is executed directly.
