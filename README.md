@@ -51,13 +51,25 @@ Five tools plus one resource, over `POST /mcp`:
   `Nebius Token Factory is not configured: set TOKEN_FACTORY_API_KEY;
   no model call was made`. A configured-but-failing API degrades the
   same way, with the HTTP failure attached.
+- **Portkey gateway mode (hosted demo):** when `PORTKEY_API_KEY` and
+  `PORTKEY_VIRTUAL_KEY` are both set, calls route through the Portkey
+  gateway (`api.portkey.ai`) to the same Token Factory custom host under
+  a revocable virtual key, instead of using the master key directly.
+  Portkey wins when fully configured; otherwise the direct key is used.
+- **Server-side $5 spend cap:** Portkey's free tier offers no budget
+  control, so the server meters every model call itself against
+  `ARC_BRIDGE_SPEND_CAP_USD` (default `$5.00`), estimating cost at a
+  deliberately conservative `$1.00` per million tokens from the
+  provider's usage block (4,000 tokens per call when usage is absent).
+  Totals persist in `ARC_BRIDGE_SPEND_STATE_FILE`; at the cap, calls
+  refuse and answers fall back to honest retrieval with the cap named.
 
 ## Run it (60 seconds)
 
 ```bash
 python3 server.py
 # backend: LocalBackend
-# model: nebius-token-factory nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B configured=False (missing: TOKEN_FACTORY_API_KEY)
+# model: nebius-token-factory nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B configured=False via direct (missing: TOKEN_FACTORY_API_KEY)
 # auth: none (local mode -- bind to 127.0.0.1 ...)
 # ARC Bridge MCP (Nebius port) on http://127.0.0.1:8765/mcp
 ```

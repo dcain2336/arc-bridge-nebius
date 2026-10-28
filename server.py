@@ -41,7 +41,8 @@ def build_app():
     _model_status = backend.model.status()  # Configured?, model slug, missing pieces.
     # Print the model line with the missing-config reason when unconfigured.
     print(f"model: nebius-token-factory {_model_status['model']} "
-          f"configured={_model_status['configured']}"
+          f"configured={_model_status['configured']} "
+          f"via {_model_status['gateway']}"
           + ("" if _model_status["configured"]  # Configured: nothing more to explain.
              else f" (missing: {', '.join(_model_status['missing'] or [])})"))  # Unconfigured: name the gap in the banner.
     # Create the MCP application object with name and version.
