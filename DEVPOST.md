@@ -62,17 +62,27 @@ configuration status, so the integration is verifiable from the outside.
   `Authorization: Bearer TOKEN_FACTORY_API_KEY`, OpenAI-shaped body.
 - Model: NVIDIA Nemotron — default slug
   `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B`, overridable via `NEBIUS_MODEL`.
-  [LIVE-CHECK: the API's own /v1/models list (Oct 28) offers
-  NVIDIA-Nemotron-3-Nano-30B-A3B and not the old 70B instruct; the live
-  capture run proves live use against the real endpoint.]
+  Slug confirmed live Oct 28: the API's own /v1/models list offers
+  NVIDIA-Nemotron-3-Nano-30B-A3B (not the old 70B instruct), and the
+  capture below ran against it with "used": true.
 - Call pattern: one chat completion per `arc_ask`, system prompt enforcing
   memory-only grounding, temperature 0.2, max 400 tokens, answer capped
   speech-safe.
-- [LIVE-CHECK: paste one real arc_ask request/response pair from a live
-  Token Factory run (question, model block showing "used": true, answer
-  text) once the $25 Builder Program Token Factory credit is activated.]
-- [LIVE-CHECK: note observed Token Factory latency for the demo questions
-  from the live run — do not estimate here.]
+- Live capture, Oct 28 (run from the repo's capture script, $25 Builder
+  Program credit applied, key via environment only):
+  - Question: "How do voice replies work?"
+  - Model block: provider `nebius-token-factory`, model
+    `nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B`, `used: true`, mode
+    `local+token-factory`, error none.
+  - Answer: "Voice replies are sent from Voice Monkey to the kitchen
+    Echo. The system follows the ECHO_POLICY setting replies_only,
+    which means only conversational answers are spoken aloud; any
+    proactive announcements are blocked and won't be spoken."
+  - Observed live behavior: Nemotron answered from the retrieved demo
+    memory records (Voice Monkey route, ECHO_POLICY replies_only),
+    not from a fallback digest — the mode reads `local+token-factory`.
+- Observed Token Factory latency, Oct 28: 3.69s wall clock for this
+  demo question (single measured run; no estimate).
 
 ## Tech used
 Python 3 (stdlib only) · MCP (spec 2025-11-25, Streamable HTTP) ·
