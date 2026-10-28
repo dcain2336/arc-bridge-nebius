@@ -61,10 +61,10 @@ configuration status, so the integration is verifiable from the outside.
 - Client: `arc_bridge/nebius.py` — `POST {TOKEN_FACTORY_BASE_URL}/chat/completions`,
   `Authorization: Bearer TOKEN_FACTORY_API_KEY`, OpenAI-shaped body.
 - Model: NVIDIA Nemotron — default slug
-  `nvidia/llama-3.1-nemotron-70b-instruct`, overridable via `NEBIUS_MODEL`.
-  [LIVE-CHECK: confirm the exact Nemotron slug available in the Token
-  Factory console once the Builder Program credit lands, and update the
-  default if the console's slug differs.]
+  `nvidia/nemotron-3-nano-30b-a3b`, overridable via `NEBIUS_MODEL`.
+  [LIVE-CHECK: the catalog (Oct 28) offers Nemotron-3-Nano-30B-A3B and
+  not the old 70B instruct; the live capture run proves this API slug
+  form against the real endpoint.]
 - Call pattern: one chat completion per `arc_ask`, system prompt enforcing
   memory-only grounding, temperature 0.2, max 400 tokens, answer capped
   speech-safe.
