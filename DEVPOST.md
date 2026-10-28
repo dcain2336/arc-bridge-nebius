@@ -108,8 +108,8 @@ Nebius Token Factory · NVIDIA Nemotron · OAuth 2.1 / PKCE · Supabase REST
   the same question with the key removed, honestly labeled retrieval.]
 - Demo URL: [LIVE-CHECK: URL of the hosted/test deployment used in the
   video, or state that the demo is the local run shown in the video.]
-- Public repo: [LIVE-CHECK: public GitHub repo URL once created, with MIT
-  license visible and this README as the repo README.]
+- Public repo: https://github.com/dcain2336/arc-bridge-nebius (public,
+  MIT license, this README as the repo README).
 
 ## Feedback on Nebius Token Factory / NVIDIA tools (draft)
 Truthful scope note: this draft is based on the porting experience —
