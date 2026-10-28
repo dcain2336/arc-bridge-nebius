@@ -106,9 +106,9 @@ Nebius Token Factory · NVIDIA Nemotron · OAuth 2.1 / PKCE · Supabase REST
   Nemotron model configured; (2) arc_health shows model status; (3) an
   arc_ask answered by Nemotron with the attribution block visible; (4)
   the same question with the key removed, honestly labeled retrieval.]
-- Demo URL: [LIVE-CHECK: URL of the hosted deployment. Required for
-  Personal AI (the waiver is Physical AI only) — a local run shown in
-  the video does not satisfy it. Oracle hosting is the plan.]
+- Demo URL: https://apnic-examples-navigate-prizes.trycloudflare.com
+  (MCP endpoint at /mcp; quick tunnel from the Oracle host to the
+  arc-bridge server on port 8772).
 - Public repo: https://github.com/dcain2336/arc-bridge-nebius (public,
   MIT license, this README as the repo README).
 
