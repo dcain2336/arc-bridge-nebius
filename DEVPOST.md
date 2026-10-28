@@ -101,11 +101,11 @@ Nebius Token Factory · NVIDIA Nemotron · OAuth 2.1 / PKCE · Supabase REST
   hackathon").
 
 ## Demo
-- Demo video (≤3 min, public YouTube): [LIVE-CHECK: record after the live
-  Token Factory run — script beats: (1) start server, banner shows the
-  Nemotron model configured; (2) arc_health shows model status; (3) an
+- Demo video (≤3 min, public YouTube): https://youtu.be/yD7NAHeGiIQ
+  (published Oct 28, 2:30, public on @davidcain3710; beats: (1) server
+  banner, Nemotron configured; (2) arc_health model status; (3) an
   arc_ask answered by Nemotron with the attribution block visible; (4)
-  the same question with the key removed, honestly labeled retrieval.]
+  the same question with the key removed, honestly labeled retrieval).
 - Demo URL: https://apnic-examples-navigate-prizes.trycloudflare.com
   (MCP endpoint at /mcp; quick tunnel from the Oracle host to the
   arc-bridge server on port 8772). Live since Oct 28, 16:33 EDT:
@@ -160,7 +160,7 @@ facts after the credit-funded live run.
 - [x] Working project + track (Personal AI) + description — this draft
 - [x] Working demo URL — live Oct 28, 16:33 EDT via the tunnel (arc_health
   configured, arc_ask model.used true on the demo question)
-- [ ] ≤3-minute public YouTube demo video — record after live run
+- [x] ≤3-minute public YouTube demo video — https://youtu.be/yD7NAHeGiIQ (public, Oct 28)
 - [ ] Public repo with OSS license + README — repo creation is a human-gated step
 - [x] Feedback draft — above, completed after the live run
 - [x] Pre-existing project explanation — above and in README.md
