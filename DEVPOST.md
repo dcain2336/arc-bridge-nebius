@@ -128,18 +128,28 @@ facts after the credit-funded live run.
   demo time" note. A public, unauthenticated `GET /v1/models`-style
   listing (or a docs page that pins canonical slugs per model family)
   would remove the guesswork for every porter.
-  [LIVE-CHECK: after the live run, confirm whether the default slug
-  worked as-is or had to be changed — that fact decides whether this
-  paragraph stays as-is, softens, or gets replaced with praise.]
-- [LIVE-CHECK: one paragraph of observed live behavior after the credit
-  run — response quality of the Nemotron model on memory-grounded
-  questions, any rate-limit or error-shape surprises, console UX for
-  key creation and credit balance. No content here until observed.]
+  Observed Oct 28, and this paragraph stays as-is: the default slug
+  did NOT work as-is. It had to change twice — first off the 70B
+  instruct (not offered to this account at all), then a casing fix,
+  because the lowercased guess of the Nano slug 404'd. The true slug
+  came from the authenticated `GET /v1/models` list, not from the
+  catalog display names, which differ from API slugs in casing.
+- Observed live behavior, Oct 28 (one demo question, $25 credit
+  applied): response quality was clean and grounded — a concise
+  answer drawn from the demo records, no rambling. No rate-limit hit
+  on a single call. Error-shape surprise: the wrong slug failed as a
+  bare HTTP 404 with no model list in the error, so the fix required
+  the separate models-list call. Console UX: key creation was
+  straightforward with no model pick at creation (model is per
+  request); the $25 code applied via balance, Top up, With promo
+  code; onboarding required a card on file.
 - NVIDIA side: Nemotron's instruction-following on the grounding system
   prompt ("answer only from the provided records, name gaps") is the
   behavior this design leans on hardest.
-  [LIVE-CHECK: report from the live transcripts whether Nemotron held
-  the grounding rule on the demo questions, with one example either way.]
+  Observed Oct 28: on the one demo question run, Nemotron held the
+  grounding rule — its answer names exactly the demo records (Voice
+  Monkey route, kitchen Echo, ECHO_POLICY replies_only) and invents
+  nothing beyond them.
 
 ## Submission checklist status
 - [x] Working project + track (Personal AI) + description — this draft
